@@ -1,0 +1,41 @@
+#+TITLE: CRC32 Implementation in Emacs Lisp
+#+AUTHOR: Nitin Choudhary
+
+* Overview
+
+This package provides an implementation of the CRC32 (Cyclic Redundancy Check 32) checksum algorithm in Emacs Lisp. CRC32 is commonly used for detecting errors in data transmission or storage.
+
+* Features
+
+- Calculates CRC32 checksum for any string input
+- Uses a precomputed lookup table for efficient calculation
+- Pure Emacs Lisp implementation
+- Customizable output format (decimal or hexadecimal)
+
+* Installation
+
+1. Save the file as =crc32.el=
+2. Load it in Emacs:
+   #+BEGIN_SRC elisp
+   (add-to-list 'load-path "/path/to/crc32")
+   (require 'crc32)  
+   #+END_SRC
+
+* Usage
+
+Calculate a CRC32 checksum:
+#+BEGIN_SRC elisp
+(crc32 "Hello World")
+;; Returns the CRC32 checksum as a string
+#+END_SRC
+
+* Customization
+
++ =crc32-output-format=: Choose between 'decimal or 'hexadecimal output
+  - Use =M-x customize-variable RET crc32-output-format RET= to set interactively
+    
+* Functions
+
+- =crc32=: Main function to compute CRC32 checksum
+- =make-crc32-table=: Internal function to generate the CRC32 lookup table
+
